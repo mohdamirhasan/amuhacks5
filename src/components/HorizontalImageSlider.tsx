@@ -54,7 +54,7 @@ const HorizontalImageSlider = () => {
               <img
                 src={img}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover select-none"
+                className="w-full object-cover select-none"
               />
             </div>
           ))}
