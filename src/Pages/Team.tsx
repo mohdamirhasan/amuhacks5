@@ -83,14 +83,14 @@ const Team = () => {
       imageUrl: "/assets/madni.jpg",
     },
     {
-      name: "Khusnuma",
+      name: "Khushnuma Khatoon",
       class: "B.Sc. III",
       imageUrl: "/assets/name.jpg",
     },
     {
       name: "Sumaniya",
       class: "MCA I",
-      imageUrl: "/assets/name.jpg",
+      imageUrl: "/assets/sumaniya.jpeg",
     },
     {
       name: "Sadaf Shahid",
