@@ -13,6 +13,8 @@ interface EventCard {
   targetDate: string;
   isMain?: boolean;
   link: string;
+  // Added guidelines field for specific instructions
+  guidelines?: React.ReactNode; 
 }
 
 interface TimeLeft {
@@ -38,6 +40,9 @@ const Icons = {
   ),
   Close: () => (
     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
+  ),
+  Info: () => (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
   )
 };
 
@@ -83,7 +88,7 @@ const EventSchedule: React.FC = () => {
       title: "Software Hackathon (National)",
       description: "The flagship event of AMUHACKS 5.0. A 30-hour innovation marathon.",
       image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=800&auto=format&fit=crop",
-      location: "Virtual / Dept. of CS",
+      location: "Virtual",
       dateTime: "10-11 Feb 2026",
       mode: "Online",
       platform: "DevFolio",
@@ -91,6 +96,17 @@ const EventSchedule: React.FC = () => {
       targetDate: "2026-02-10T00:00:00",
       isMain: true,
       link: "https://www.amuhacks-5.online/",
+      // CHANGE 1: Added specific round details
+      guidelines: (
+        <div className="space-y-2">
+           <p className="font-bold underline">Competition Structure (3 Rounds):</p>
+           <ul className="list-disc pl-5 space-y-1">
+             <li><span className="font-bold text-[#2C4A41]">Round 1:</span> Idea Submission (Deadline: 7th Feb)</li>
+             <li><span className="font-bold text-[#2C4A41]">Round 2:</span> Hackathon (10-11th Feb)</li>
+             <li><span className="font-bold text-[#2C4A41]">Round 3:</span> Final Round Presentation</li>
+           </ul>
+        </div>
+      )
     },
     {
       title: "Quiz Competition",
@@ -103,9 +119,16 @@ const EventSchedule: React.FC = () => {
       fee: "₹100 / team",
       targetDate: "2026-02-11T15:00:00",
       link: "https://forms.gle/p3EUuFGb3Vdtf8V96",
+      // CHANGE 2: Added seat limit note
+      guidelines: (
+        <p className="font-bold text-red-600/80 bg-red-50 p-2 rounded-md border border-red-100">
+           ⚠️ Important Note: Limited seats available (10 teams only). Register ASAP.
+        </p>
+      )
     },
     {
-      title: "Coding Competition",
+      // CHANGE 3: Updated Title
+      title: "Coding and Debugging Competition",
       description: "Showcase your algorithmic thinking on HackerRank.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop",
       location: "Conference Hall, Dept. of Computer Science, AMU",
@@ -207,10 +230,10 @@ const EventSchedule: React.FC = () => {
             onClick={() => setSelectedEvent(null)}
           />
           
-          <div className="relative bg-[#F0EAD6] w-full max-w-lg rounded-[2rem] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200 ring-4 ring-[#93E9BE]/20">
+          <div className="relative bg-[#F0EAD6] w-full max-w-lg rounded-[2rem] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200 ring-4 ring-[#93E9BE]/20 max-h-[90vh] flex flex-col">
             
             {/* 1. Header Section */}
-            <div className="bg-[#2C4A41] p-8 md:p-10 relative overflow-hidden">
+            <div className="bg-[#2C4A41] p-8 md:p-10 relative overflow-hidden flex-shrink-0">
                {/* Decorative elements */}
                <div className="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-[#93E9BE] rounded-full blur-3xl opacity-20 pointer-events-none"></div>
                <div className="absolute bottom-0 left-0 -ml-10 -mb-10 w-40 h-40 bg-[#93E9BE] rounded-full blur-3xl opacity-10 pointer-events-none"></div>
@@ -230,8 +253,8 @@ const EventSchedule: React.FC = () => {
                </div>
             </div>
 
-            {/* 2. Grid Content */}
-            <div className="p-6 md:p-8">
+            {/* 2. Scrollable Content */}
+            <div className="p-6 md:p-8 overflow-y-auto custom-scrollbar">
               <div className="grid grid-cols-2 gap-x-4 gap-y-6 mb-8">
                 {/* Cell 1 */}
                 <div className="flex flex-col space-y-1">
@@ -270,6 +293,17 @@ const EventSchedule: React.FC = () => {
                 </div>
               </div>
 
+              {/* NEW SECTION: Specific Guidelines Display */}
+              {selectedEvent.guidelines && (
+                <div className="mb-8 p-4 bg-white/50 rounded-xl border border-[#2C4A41]/10 text-xs md:text-sm text-[#2C4A41]/80 leading-relaxed">
+                   <div className="flex items-center space-x-2 text-[#2C4A41] mb-2 font-black uppercase tracking-widest text-[10px]">
+                      <Icons.Info />
+                      <span>Special Details</span>
+                   </div>
+                   {selectedEvent.guidelines}
+                </div>
+              )}
+
               {/* 3. Divider & Footer */}
               <div className="border-t-2 border-dashed border-[#2C4A41]/10 pt-6">
                  {selectedEvent.link ? (
@@ -278,7 +312,6 @@ const EventSchedule: React.FC = () => {
                         *Registration required before deadline
                         </p>
                       
-                      {/* IMPROVED BUTTON: Bright Mint Background with Dark Text + Pop Effect */}
                       <a 
                         href={selectedEvent.link} 
                         target="_blank" 
