@@ -7,7 +7,7 @@ import Footer from './components/shadcn-studio/blocks/footer-component-01/footer
 import EventSchedule from './components/EventSchedule';
 import AboutUs from './components/AboutUs';
 import Sponsors from './components/Sponsors';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
 
