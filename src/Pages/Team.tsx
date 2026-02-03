@@ -249,7 +249,7 @@ const Team = () => {
             <TabsTrigger
               value="lead"
               className="text-white bg-[#4b2903] data-[state=active]:bg-[#c1a165] max-w-fit">
-              Lead
+              Leads
             </TabsTrigger>
             <TabsTrigger
               value="tech"

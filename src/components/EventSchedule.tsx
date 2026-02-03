@@ -85,15 +85,15 @@ const EventSchedule: React.FC = () => {
 
   const events: EventCard[] = [
     {
-      title: "Software Hackathon (National)",
+      title: "Software Hackathon",
       description: "The flagship event of AMUHACKS 5.0. A 30-hour innovation marathon.",
       image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=800&auto=format&fit=crop",
       location: "Virtual",
-      dateTime: "10-11 Feb 2026",
+      dateTime: "11-12th Feb 2026",
       mode: "Online",
       platform: "DevFolio",
       fee: "Free",
-      targetDate: "2026-02-10T00:00:00",
+      targetDate: "2026-02-11T00:00:00",
       isMain: true,
       link: "https://www.amuhacks-5.online/",
       // CHANGE 1: Added specific round details
@@ -101,9 +101,9 @@ const EventSchedule: React.FC = () => {
         <div className="space-y-2">
            <p className="font-bold underline">Competition Structure (3 Rounds):</p>
            <ul className="list-disc pl-5 space-y-1">
-             <li><span className="font-bold text-[#2C4A41]">Round 1:</span> Idea Submission (Deadline: 7th Feb)</li>
-             <li><span className="font-bold text-[#2C4A41]">Round 2:</span> Hackathon (10-11th Feb)</li>
-             <li><span className="font-bold text-[#2C4A41]">Round 3:</span> Final Round Presentation</li>
+             <li><span className="font-bold text-[#2C4A41]">Round 1:</span> Idea Submission (Deadline: 9th Feb)</li>
+             <li><span className="font-bold text-[#2C4A41]">Round 2:</span> Hackathon (11th-12th Feb)</li>
+             <li><span className="font-bold text-[#2C4A41]">Round 3:</span> Final Round Presentation (16th Feb)</li>
            </ul>
         </div>
       )
@@ -113,11 +113,11 @@ const EventSchedule: React.FC = () => {
       description: "Test your knowledge across computer science fundamentals.",
       image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop",
       location: "Conference Hall, Dept. of Computer Science, AMU",
-      dateTime: "11 Feb | 3:00 PM",
+      dateTime: "12th Feb | 3:00 PM - 4:30 PM",
       mode: "Offline",
       platform: "On-Campus",
       fee: "₹100 / team",
-      targetDate: "2026-02-11T15:00:00",
+      targetDate: "2026-02-12T15:00:00",
       link: "https://forms.gle/p3EUuFGb3Vdtf8V96",
       // CHANGE 2: Added seat limit note
       guidelines: (
@@ -132,11 +132,11 @@ const EventSchedule: React.FC = () => {
       description: "Showcase your algorithmic thinking on HackerRank.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop",
       location: "Conference Hall, Dept. of Computer Science, AMU",
-      dateTime: "10 Feb | 3:00 PM",
+      dateTime: "11th Feb | 3:00 PM - 4:30 PM",
       mode: "Offline",
       platform: "HackerRank",
       fee: "₹40 / person",
-      targetDate: "2026-02-10T15:00:00",
+      targetDate: "2026-02-11T15:00:00",
       link: "https://forms.gle/BHogpSLVbo2aYP1V9",
     },
     {
@@ -144,7 +144,7 @@ const EventSchedule: React.FC = () => {
       description: "A cybersecurity battleground focusing on cryptography.",
       image: "https://certify.cybervista.net/wp-content/uploads/2020/05/BLOG_Capture-the-Flag.png",
       location: "Virtual Environment",
-      dateTime: "13 Feb | 6:00 PM",
+      dateTime: "13th Feb | 6:00 PM - 7:00 PM",
       mode: "Online",
       platform: "TBA",
       fee: "₹50 / person",
@@ -258,16 +258,16 @@ const EventSchedule: React.FC = () => {
               <div className="grid grid-cols-2 gap-x-4 gap-y-6 mb-8">
                 {/* Cell 1 */}
                 <div className="flex flex-col space-y-1">
-                   <div className="flex items-center space-x-2 text-[#2C4A41]/50 mb-1">
+                   <div className="flex items-center space-x-2 text-[#2C4A41]/90 mb-1">
                       <Icons.Calendar />
                       <span className="text-[10px] font-black uppercase tracking-widest">Schedule</span>
                    </div>
-                   <p className="text-[#2C4A41] font-bold text-sm leading-tight">{selectedEvent.dateTime}</p>
+                   <p className="text-[#2C4A41] font-bold text-xs leading-tight">{selectedEvent.dateTime}</p>
                 </div>
 
                 {/* Cell 2 */}
                 <div className="flex flex-col space-y-1">
-                   <div className="flex items-center space-x-2 text-[#2C4A41]/50 mb-1">
+                   <div className="flex items-center space-x-2 text-[#2C4A41]/90 mb-1">
                       <Icons.Monitor />
                       <span className="text-[10px] font-black uppercase tracking-widest">Platform</span>
                    </div>
@@ -276,7 +276,7 @@ const EventSchedule: React.FC = () => {
 
                 {/* Cell 3 */}
                 <div className="flex flex-col space-y-1">
-                   <div className="flex items-center space-x-2 text-[#2C4A41]/50 mb-1">
+                   <div className="flex items-center space-x-2 text-[#2C4A41]/90 mb-1">
                       <Icons.MapPin />
                       <span className="text-[10px] font-black uppercase tracking-widest">Location</span>
                    </div>
@@ -285,7 +285,7 @@ const EventSchedule: React.FC = () => {
 
                 {/* Cell 4 */}
                 <div className="flex flex-col space-y-1">
-                   <div className="flex items-center space-x-2 text-[#2C4A41]/50 mb-1">
+                   <div className="flex items-center space-x-2 text-[#2C4A41]/90 mb-1">
                       <Icons.Ticket />
                       <span className="text-[10px] font-black uppercase tracking-widest">Fee</span>
                    </div>
