@@ -286,7 +286,7 @@ const Team = () => {
                     />
                   </div>
                   <div className="details flex flex-col items-center justify-center">
-                    <div className="text-[#2C4A41] name font-[800px] text-center tracking-tighter text-sm md:text-base">
+                    <div className="text-[#2C4A41] name font-[800px] font-bold text-center tracking-tighter text-sm md:text-base">
                       {teamMember.name}
                     </div>
                     <div className="text-black name font-bold text-center tracking-tighter text-xs md:text-base">
