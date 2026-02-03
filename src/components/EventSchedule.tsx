@@ -108,6 +108,7 @@ const EventSchedule: React.FC = () => {
         </div>
       )
     },
+
     {
       title: "Quiz Competition",
       description: "Test your knowledge across computer science fundamentals.",
@@ -122,10 +123,12 @@ const EventSchedule: React.FC = () => {
       // CHANGE 2: Added seat limit note
       guidelines: (
         <p className="font-bold text-red-600/80 bg-red-50 p-2 rounded-md border border-red-100">
-           ⚠️ Important Note: Limited seats available (10 teams only). Register ASAP.
+           ⚠️ Important Note: Limited seats available (10 teams only). Register ASAP.<br />
+           ⚠️ Only for AMU Students.
         </p>
       )
     },
+
     {
       // CHANGE 3: Updated Title
       title: "Coding and Debugging Competition",
@@ -138,7 +141,14 @@ const EventSchedule: React.FC = () => {
       fee: "₹40 / person",
       targetDate: "2026-02-11T15:00:00",
       link: "https://forms.gle/BHogpSLVbo2aYP1V9",
+
+      guidelines: (
+        <p className="font-bold text-red-600/80 bg-red-50 p-2 rounded-md border border-red-100">
+           ⚠️ Only for AMU Students.
+        </p>
+      )
     },
+
     {
       title: "Capture The Flag (CTF)",
       description: "A cybersecurity battleground focusing on cryptography.",
