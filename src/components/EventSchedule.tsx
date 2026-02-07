@@ -114,11 +114,11 @@ const EventSchedule: React.FC = () => {
       description: "Test your knowledge across computer science fundamentals.",
       image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop",
       location: "Conference Hall, Dept. of Computer Science, AMU",
-      dateTime: "12th Feb | 3:00 PM - 4:30 PM",
+      dateTime: "14th Feb | 3:00 PM - 4:30 PM",
       mode: "Offline",
       platform: "On-Campus",
       fee: "₹100 / team",
-      targetDate: "2026-02-12T15:00:00",
+      targetDate: "2026-02-14T15:00:00",
       link: "https://forms.gle/p3EUuFGb3Vdtf8V96",
       // CHANGE 2: Added seat limit note
       guidelines: (
@@ -135,11 +135,11 @@ const EventSchedule: React.FC = () => {
       description: "Showcase your algorithmic thinking on HackerRank.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop",
       location: "Conference Hall, Dept. of Computer Science, AMU",
-      dateTime: "11th Feb | 3:00 PM - 4:30 PM",
+      dateTime: "12th Feb | 3:00 PM - 4:30 PM",
       mode: "Offline",
       platform: "HackerRank",
       fee: "₹40 / person",
-      targetDate: "2026-02-11T15:00:00",
+      targetDate: "2026-02-12T15:00:00",
       link: "https://forms.gle/BHogpSLVbo2aYP1V9",
 
       guidelines: (
